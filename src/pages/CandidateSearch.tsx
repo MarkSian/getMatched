@@ -90,12 +90,12 @@ const CandidateSearch = () => {
          {currentCandidate && ( <img className = "max-w-auto max-h-auto aspect-video" src={currentCandidate.avatar_url} alt={`${currentCandidate.name}'s avatar`} /> )}
         <div className = "card-body">
             <h2 className ="card-title text-primary">Potential Candidate</h2>
-            <h2 className = "text-info">{currentCandidate.name || 'Name Not Available'}</h2>
-            <p>Username: {currentCandidate.username || 'Username Not Available'}</p>
-            <p>Company: {currentCandidate.company || 'Company Not Available'}</p>
-            <p>Location: {currentCandidate.location || 'Location Not Available'}</p>
-            <p>Email: {currentCandidate.email || 'Email Not Available'}</p>
-            <p>Github: {currentCandidate.html_url || 'Github URL Not Available'}</p>
+            <h2 className = "text-info text-xs uppercase font-semibold mt-1 tracking-wide">{currentCandidate.name || 'Name Not Available'}</h2>
+            <p className="text-xs uppercase font-semibold mt-1 tracking-wide">Username: {currentCandidate.username || 'Username Not Available'}</p>
+            <p className="text-xs uppercase font-semibold mt-1 tracking-wide">Company: {currentCandidate.company || 'Company Not Available'}</p>
+            <p className="text-xs uppercase font-semibold mt-1 tracking-wide">Location: {currentCandidate.location || 'Location Not Available'}</p>
+            <p className="text-xs uppercase font-semibold mt-1 tracking-wide">Email: {currentCandidate.email || 'Email Not Available'}</p>
+            <p className="text-xs uppercase font-semibold mt-1 tracking-wide">Github: {currentCandidate.html_url || 'Github URL Not Available'}</p>
             <div className="card-actions justify-center w-full mt-3">
             <button className='btn btn-success ' onClick={handleSaveCandidate}>Save Now</button>
             <button className='btn btn-error ' onClick={nextCandidate}>Reject/Pass</button>
