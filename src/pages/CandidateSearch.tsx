@@ -1,14 +1,13 @@
-//imports
+//Imports
 import { useState, useEffect } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 import { Candidate } from '../interfaces/CandidateInterface';
 
 // CandidateSearch component
 const CandidateSearch = () => {
-  //variables
-  const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [candidates, setCandidates] = useState<Candidate[]>([]);
 
   //useEffect
   useEffect(() => {
@@ -18,7 +17,7 @@ const CandidateSearch = () => {
         const candidateList = await searchGithub(); //fetching candidates from the API
         console.log('Fetched candidates:', candidateList);
 
-        //map the fetched data
+        //map data
         const mappedCandidates = candidateList.map((user: any) => ({
           username: user.login,
           avatar_url: user.avatar_url,

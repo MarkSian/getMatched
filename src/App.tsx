@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import NavBar from './components/NavBar'
-import CandidateSearch from './pages/CandidateSearch'
+import { Outlet } from 'react-router-dom';
+import Nav from './components/NavBar';
 
 function App() {
   return (
     <>
-      < NavBar />
-      < CandidateSearch />
-
+      <Nav />
+      <main>
+        <Outlet />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
