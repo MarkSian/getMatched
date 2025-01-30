@@ -79,10 +79,10 @@ const CandidateSearch = () => {
 
   const currentCandidate = candidates[currentIndex];
   if (loading) {
-    return <p>Loading candidates...</p>;
+    return <p className ="center-container text-center font-bold">Loading Candidates...</p>;
   }
   if(!currentCandidate) {
-    return <p>No candidates found</p>;
+    return <p className ="center-container text-center font-bold" >No candidates found</p>;
   }
 
   return (
@@ -97,8 +97,8 @@ const CandidateSearch = () => {
             <p>Email: {currentCandidate.email || 'Email Not Available'}</p>
             <p>Github: {currentCandidate.html_url || 'Github URL Not Available'}</p>
             <div className="card-actions justify-center w-full mt-3">
-            <button className='btn btn-success save-button' onClick={handleSaveCandidate}>Save Now</button>
-            <button className='btn btn-error reject-button' onClick={nextCandidate}>Reject/Pass</button>
+            <button className='btn btn-success ' onClick={handleSaveCandidate}>Save Now</button>
+            <button className='btn btn-error ' onClick={nextCandidate}>Reject/Pass</button>
             </div>
         </div>
     </div>

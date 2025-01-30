@@ -22,43 +22,31 @@ const SavedCandidates = () => {
       localStorage.setItem('savedCandidates', JSON.stringify(updatedSavedCandidates));
     }
     return (
-      <>
-        <h1>Potential Candidates</h1>
+      <div className ="center-container text-info shadow-xl">
+        <h1 className = "text-center text-3xl font-bold mb-4">Potential Candidates</h1>
         {savedCandidates.length === 0 ? (
           <p>No Saved Candidates found!</p>
         ) : (
-          <table>
-            <thead>
-              <tr>
-                <th>Img</th>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Email</th>
-                <th>company</th>
-                <th>Github</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {savedCandidates.map(candidate => (
-                <tr key={candidate.username}>
-                  <td>
-                  <img src={candidate.avatar_url} alt={`${candidate.name}'s avatar`} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
-                  </td>
-                  <td>{candidate.name || candidate.username}</td>
-                  <td>{candidate.location}</td>
-                  <td>{candidate.email}</td>
-                  <td>{candidate.company}</td>
-                  <td>{candidate.html_url}</td>
-                  <td>
-                    <button onClick={() => handleRejectedCandidate(candidate.username)}>Reject</button>
-                  </td>
-                </tr>
+            <ul className="list bg-base-100 rounded-box shadow-md">
+              {savedCandidates.map((candidate, index) => (
+                <li key={candidate.username} className="list-row">
+                    <div className="text-4xl font-thin opacity-30 tabular-nums">{index + 1}</div>
+                    <div><img className = "size-20 rounded-box" src={candidate.avatar_url} alt={`${candidate.name}'s avatar`}/></div>
+                    <div className="list-col-grow">
+                    <div>{candidate.username || "Username Not Available"}</div>
+                    <div>{candidate.name || "Name Not Available"}</div>
+                    
+                    <div className="text-xs uppercase font-semibold opacity-60">{candidate.location || "Location Not Available"}</div>
+                    <div className="text-xs uppercase font-semibold opacity-60">{candidate.company || "Company Not Available"}</div>
+                    <div className="text-xs uppercase font-semibold opacity-60">{candidate.email || "Email Not Available"}</div>
+                    <div className="text-xs uppercase font-semibold opacity-60">{candidate.html_url || "URL Not Available"}</div>
+                    </div>
+                    <button className="btn btn-warning" onClick={() => handleRejectedCandidate(candidate.username)}>Reject</button>
+                </li>
               ))}
-            </tbody>
-          </table>
+            </ul>
           )}
-      </>
+      </div>
     );
   };
   
