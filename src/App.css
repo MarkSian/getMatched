@@ -6,3 +6,6 @@
 .center-container {
   @apply mx-auto lg:w-2/4 md:w-3/4 w-[95%]
 }
+.content-center-container {
+  @apply mx-auto lg:w-3/5 md:w-3/4 w-[95%]
+}
