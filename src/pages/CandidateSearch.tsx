@@ -87,12 +87,12 @@ const CandidateSearch = () => {
   }
 
   return (
-    <div className="card center-container card-compact mt-4 bg-base-200/ w-96 shadow-xl">
+    <div className = "card center-container card-compact mt-4 bg-base-200/ w-96 shadow-xl">
          {currentCandidate && ( <img className = "max-w-auto max-h-auto aspect-video" src={currentCandidate.avatar_url} alt={`${currentCandidate.name}'s avatar`} /> )}
-        <div className="card-body">
-            <h2 className="card-title text-primary">Potential Candidate</h2>
-            <h2>{currentCandidate.name || 'Name Not Available'}</h2>
-            <p>Username: {currentCandidate.username}</p>
+        <div className = "card-body">
+            <h2 className ="card-title text-primary">Potential Candidate</h2>
+            <h2 className = "text-info">{currentCandidate.name || 'Name Not Available'}</h2>
+            <p>Username: {currentCandidate.username || 'Username Not Available'}</p>
             <p>Company: {currentCandidate.company || 'Company Not Available'}</p>
             <p>Location: {currentCandidate.location || 'Location Not Available'}</p>
             <p>Email: {currentCandidate.email || 'Email Not Available'}</p>
