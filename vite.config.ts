@@ -12,4 +12,7 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  server: {
+    allowedHosts: ['getmatched.onrender.com'],
+  },
 })
